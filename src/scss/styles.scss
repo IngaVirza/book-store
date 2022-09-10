@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import './fonts/fonts.scss';
+
+.light-theme {
+	--mainBgColor: white;
+	--mainColor: black;
+}
+
+.dark-theme {
+	--mainBgColor: black;
+	--mainColor: white;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto';
+	font-size: 20px;
+	margin: 0;
+	color: var(--mainColor);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: block;
+	padding: 0 15px;
+	width: 100%;
+}

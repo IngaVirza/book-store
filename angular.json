@@ -3,11 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "first_lesson": {
+    "book-store": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+				"@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -17,7 +27,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/first_lesson",
+            "outputPath": "dist/book-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +38,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -54,6 +64,28 @@
               ],
               "outputHashing": "all"
             },
+						"github": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.github.ts"
+                }
+              ],
+              "outputHashing": "all",
+							"baseHref": "/book-store/"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -69,10 +101,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "first_lesson:build:production"
+              "browserTarget": "book-store:build:production"
             },
             "development": {
-              "browserTarget": "first_lesson:build:development"
+              "browserTarget": "book-store:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +112,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "first_lesson:build"
+            "browserTarget": "book-store:build"
           }
         },
         "test": {
@@ -103,5 +135,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
