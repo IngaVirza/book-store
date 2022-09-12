@@ -2,4 +2,8 @@
 	background-color: var(--mainBgColor);
 	height: 100%;
 	padding: 20px 0;
+
+	transition-timing-function: var(--transitionTimingFunction);
+	transition-duration: var(--transitionDuration);
+	transition-property: background-color;
 }

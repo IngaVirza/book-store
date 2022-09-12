@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts/fonts.scss';
 
+:root {
+	--transitionTimingFunction: linear;
+	--transitionDuration: 0.3s;
+}
+
 .light-theme {
 	--mainBgColor: white;
 	--mainColor: black;
@@ -24,6 +29,10 @@ body {
 	font-size: 20px;
 	margin: 0;
 	color: var(--mainColor);
+	
+	transition-timing-function: var(--transitionTimingFunction);
+	transition-duration: var(--transitionDuration);
+	transition-property: color;
 }
 
 .container {

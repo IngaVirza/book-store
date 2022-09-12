@@ -2,4 +2,31 @@
 	background-color: var(--mainBgColor);
 	height: 100%;
 	padding: 20px 0;
+
+	transition-timing-function: var(--transitionTimingFunction);
+	transition-duration: var(--transitionDuration);
+	transition-property: background-color;
+}
+
+.header__wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__logo-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header__change-theme {
+	user-select: none;
+}
+
+.header__change-theme-svg-path {
+	fill: var(--mainBgColor);
+	stroke: var(--mainColor);
+	
+	transition-timing-function: var(--transitionTimingFunction);
+	transition-duration: var(--transitionDuration);
+	transition-property: fill, stroke;
 }
